@@ -46,10 +46,21 @@ export const workFlowDataSlice = createSlice({
             state.Tasksasks = state.Tasks.filter(
                 (task) => task.workFlowId !== workFlowId
             );
-        }
+        },
+        updateTaskDependencies: (state, action) => {
+            const { taskId, dependsOnTaskIds } = action.payload;
+
+            const task = state.Tasks.find(
+                (task) => task.id === taskId
+            );
+
+            if (task) {
+                task.dependsOnTaskIds = dependsOnTaskIds;
+            }
+        },
     }
 })
 
-export const { addAllData, addWorkFlow, addTasks, removeTasks, removeWorkFlow } = workFlowDataSlice.actions
+export const { addAllData, updateTaskDependencies, addWorkFlow, addTasks, removeTasks, removeWorkFlow } = workFlowDataSlice.actions
 
 export default workFlowDataSlice.reducer;

@@ -55,6 +55,7 @@ function AddTask() {
       id: crypto.randomUUID(),
       name: taskName.trim(),
       workFlowId: selectedWorkflowId,
+      isCompleted:false,
       dependsOnTaskIds,
     };
 
