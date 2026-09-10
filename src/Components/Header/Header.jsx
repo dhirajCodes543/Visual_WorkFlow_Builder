@@ -11,7 +11,7 @@ function Header() {
         to="/workFlows"
         className="px-5 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
       >
-        Create Workflow
+        Previous Workflow`s
       </Link>
     </header>
   );
